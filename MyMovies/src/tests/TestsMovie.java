@@ -2,6 +2,10 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.Test;
 
 import business.Movie;
@@ -43,6 +47,17 @@ public class TestsMovie {
 		m.runtime = "144";
 		Movie movie = new Movie(m);
 		assertEquals("144", movie.getRuntime());
+	}
+	@Test
+	public void getGenres_getCorrectGenres() {
+		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
+		// legg til genres
+		m.genres = new ArrayList<String>();
+		m.genres.add("action");
+		m.genres.add("comedy");
+		List<String> temp = new ArrayList<>(Arrays.asList("action", "comedy"));
+		Movie movie = new Movie(m);
+		assertEquals(temp, movie.getGenres());
 	}
 
 }

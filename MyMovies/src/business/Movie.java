@@ -1,5 +1,7 @@
 package business;
 
+import java.util.List;
+
 public class Movie {
 	
 	private it.jtomato.gson.Movie movie;
@@ -26,5 +28,10 @@ public class Movie {
 
 	public String getRuntime() {	
 		return this.movie.runtime;
+	}
+
+	public List<String> getGenres() {
+		List<String> allGenres = this.movie.genres;
+		return allGenres;
 	}	
 }

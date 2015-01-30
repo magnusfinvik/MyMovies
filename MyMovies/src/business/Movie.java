@@ -31,7 +31,6 @@ public class Movie {
 	}
 
 	public List<String> getGenres() {
-		List<String> allGenres = this.movie.genres;
-		return allGenres;
+		return this.movie.genres;
 	}	
 }

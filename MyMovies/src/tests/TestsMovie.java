@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.*;
+import it.jtomato.gson.Rating;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,13 +52,28 @@ public class TestsMovie {
 	@Test
 	public void getGenres_getCorrectGenres() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
-		// legg til genres
 		m.genres = new ArrayList<String>();
 		m.genres.add("action");
 		m.genres.add("comedy");
 		List<String> temp = new ArrayList<>(Arrays.asList("action", "comedy"));
 		Movie movie = new Movie(m);
 		assertEquals(temp, movie.getGenres());
+	}
+	@Test
+	public void getRating_getCorrectRating() {
+		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
+		m.rating = new Rating();
+		m.rating.audienceRating = "Upright";
+		m.rating.audienceScore = 89;
+		m.rating.criticsRating = "Certified fresh";
+		m.rating.criticsScore = 90;
+		Movie movie = new Movie(m);
+		assertEquals("Upright", movie.getAudienceRating());
+		assertEquals(89, movie.getAudienceScore());
+		assertEquals("Certified fresh", movie.getCriticsRating());
+		assertEquals(90, movie.getCriticsScore());
+		
+		
 	}
 
 }

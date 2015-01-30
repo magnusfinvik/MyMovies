@@ -32,5 +32,21 @@ public class Movie {
 
 	public List<String> getGenres() {
 		return this.movie.genres;
+	}
+
+	public String getAudienceRating() {
+		return this.movie.rating.audienceRating;
+	}
+
+	public int getAudienceScore() {
+		return this.movie.rating.audienceScore;
+	}
+
+	public String getCriticsRating() {
+		return this.movie.rating.criticsRating;
+	}
+
+	public int getCriticsScore() {
+		return this.movie.rating.criticsScore;
 	}	
 }

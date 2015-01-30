@@ -10,7 +10,7 @@ public class Console {
 	public static void main(String[] args) {
 		WebRepository repo = new WebRepository();
 		ArrayList<Movie> movies = repo.getBoxOfficeMovies(3);
-		ArrayList<Movie> result = repo.searchMovie("Orion");
+		ArrayList<Movie> result = repo.searchMovie("Paddington");
 		for (Movie movie : movies) {
 			System.out.println(movie.getId() + ": " + movie.getTitle());
 		}

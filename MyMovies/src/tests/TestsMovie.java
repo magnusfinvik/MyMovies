@@ -23,5 +23,12 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals("123", movie.getId());		
 	}
+	@Test
+	public void getYear_getsCorrectYear() {
+		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
+		m.year = "2013";
+		Movie movie = new Movie(m);
+		assertEquals("2013", movie.getYear());
+	}
 
 }

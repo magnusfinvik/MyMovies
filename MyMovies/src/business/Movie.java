@@ -14,5 +14,9 @@ public class Movie {
 	
 	public String getId(){
 		return this.movie.id;
+	}
+
+	public String getYear() {		
+		return this.movie.year;
 	}	
 }

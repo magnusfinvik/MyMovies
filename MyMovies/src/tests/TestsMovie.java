@@ -28,6 +28,7 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals("123", movie.getId());		
 	}
+	
 	@Test
 	public void getYear_getsCorrectYear() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
@@ -35,6 +36,7 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals("2013", movie.getYear());
 	}
+	
 	@Test
 	public void getSynopsis_getCorrectSynopsis() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
@@ -42,6 +44,7 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals("In a land far far away, there was a man like no other!", movie.getSynopsis());
 	}
+	
 	@Test
 	public void getRunTime_getCorrectRunTime() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
@@ -49,6 +52,7 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals("144", movie.getRuntime());
 	}
+	
 	@Test
 	public void getGenres_getCorrectGenres() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
@@ -59,6 +63,7 @@ public class TestsMovie {
 		Movie movie = new Movie(m);
 		assertEquals(temp, movie.getGenres());
 	}
+	
 	@Test
 	public void getRating_getCorrectRating() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
@@ -71,9 +76,6 @@ public class TestsMovie {
 		assertEquals("Upright", movie.getAudienceRating());
 		assertEquals(89, movie.getAudienceScore());
 		assertEquals("Certified fresh", movie.getCriticsRating());
-		assertEquals(90, movie.getCriticsScore());
-		
-		
+		assertEquals(90, movie.getCriticsScore());		
 	}
-
 }

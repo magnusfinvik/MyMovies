@@ -18,5 +18,13 @@ public class Movie {
 
 	public String getYear() {		
 		return this.movie.year;
+	}
+
+	public String getSynopsis() {
+		return this.movie.synopsis;
+	}
+
+	public String getRuntime() {	
+		return this.movie.runtime;
 	}	
 }

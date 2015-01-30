@@ -40,9 +40,9 @@ public class TestsMovie {
 	@Test
 	public void getRunTime_getCorrectRunTime() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
-		m.runtime = "15:40";
+		m.runtime = "144";
 		Movie movie = new Movie(m);
-		assertEquals("15:40", movie.getRuntime());
+		assertEquals("144", movie.getRuntime());
 	}
 
 }

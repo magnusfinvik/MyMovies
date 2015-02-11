@@ -1,17 +1,16 @@
 package client;
 
 import java.util.ArrayList;
-
-import business.Movie;
+import business.MyMovie;
 import repository.WebRepository;
 
 public class Console {
 
 	public static void main(String[] args) {
 		WebRepository repo = new WebRepository();
-		ArrayList<Movie> movies = repo.getBoxOfficeMovies(3);
-		ArrayList<Movie> result = repo.searchMovie("Paddington");
-		for (Movie movie : movies) {
+		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(3);
+		ArrayList<MyMovie> result = repo.searchMovie("Paddington");
+		for (MyMovie movie : movies) {
 			System.out.println(movie.getId() + ": " + movie.getTitle());
 		}
 		

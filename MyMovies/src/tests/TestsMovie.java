@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import business.Movie;
+import business.MyMovie;
 
 public class TestsMovie {
 
@@ -17,7 +17,7 @@ public class TestsMovie {
 	public void getTitle_GetsCorrectTitle() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
 		m.title = "Pelle";
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("Pelle", movie.getTitle());		
 	}
 	
@@ -25,7 +25,7 @@ public class TestsMovie {
 	public void getId_getsCorrectId() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
 		m.id = "123";
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("123", movie.getId());		
 	}
 	
@@ -33,7 +33,7 @@ public class TestsMovie {
 	public void getYear_getsCorrectYear() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
 		m.year = "2013";
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("2013", movie.getYear());
 	}
 	
@@ -41,7 +41,7 @@ public class TestsMovie {
 	public void getSynopsis_getCorrectSynopsis() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
 		m.synopsis = "In a land far far away, there was a man like no other!";
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("In a land far far away, there was a man like no other!", movie.getSynopsis());
 	}
 	
@@ -49,7 +49,7 @@ public class TestsMovie {
 	public void getRunTime_getCorrectRunTime() {
 		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
 		m.runtime = "144";
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("144", movie.getRuntime());
 	}
 	
@@ -60,7 +60,7 @@ public class TestsMovie {
 		m.genres.add("action");
 		m.genres.add("comedy");
 		List<String> temp = new ArrayList<>(Arrays.asList("action", "comedy"));
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals(temp, movie.getGenres());
 	}
 	
@@ -72,7 +72,7 @@ public class TestsMovie {
 		m.rating.audienceScore = 89;
 		m.rating.criticsRating = "Certified fresh";
 		m.rating.criticsScore = 90;
-		Movie movie = new Movie(m);
+		MyMovie movie = new MyMovie(m);
 		assertEquals("Upright", movie.getAudienceRating());
 		assertEquals(89, movie.getAudienceScore());
 		assertEquals("Certified fresh", movie.getCriticsRating());

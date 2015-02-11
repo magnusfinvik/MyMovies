@@ -16,22 +16,22 @@ public class WebRepository {
 		this.client = client; 
 	}
 	
-	public ArrayList<business.Movie> getBoxOfficeMovies(int limit){
+	public ArrayList<business.MyMovie> getBoxOfficeMovies(int limit){
 		Collection<Movie> movies = client.getBoxOfficeMovies("no", limit);
-		ArrayList<business.Movie> returnList = new ArrayList<>();
+		ArrayList<business.MyMovie> returnList = new ArrayList<>();
 		for (Movie movie : movies) {
-			returnList.add(new business.Movie(movie));
+			returnList.add(new business.MyMovie(movie));
 		}
 		
 		return returnList;
 	}	
 	
-	public ArrayList<business.Movie> searchMovie(String searchString) {
+	public ArrayList<business.MyMovie> searchMovie(String searchString) {
 		ArrayList<Movie> result = new ArrayList<Movie>();
 		client.searchMovie(searchString, result, 1);
-		ArrayList<business.Movie> returnList = new ArrayList<>();
+		ArrayList<business.MyMovie> returnList = new ArrayList<>();
 		for (Movie movie : result) {
-			returnList.add(new business.Movie(movie));
+			returnList.add(new business.MyMovie(movie));
 		}		
 		
 		return returnList;

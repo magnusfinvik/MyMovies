@@ -2,9 +2,9 @@ package Interfaces;
 
 import java.util.List;
 
-import business.Movie;
+import business.MyMovie;
 
 public interface FileMediatorInterface {
-	void storeMoviesAsFavorite(Movie movie);
+	void storeMoviesAsFavorite(MyMovie movie);
 	List<String> getFavoriteIds();
 }

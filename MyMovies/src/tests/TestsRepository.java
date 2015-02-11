@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import business.Movie;
+import business.MyMovie;
 import repository.WebRepository;
 
 public class TestsRepository {
@@ -23,7 +23,7 @@ public class TestsRepository {
 	@Test
 	public void getBoxOfficeMovies_ReturnsOneMovie() {
 		httpClient.setResponse(JsonResult.jsonBoxOfficeMovies);
-		ArrayList<Movie> movies = repo.getBoxOfficeMovies(10);
+		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(10);
 		assertEquals(movies.size(), 1);
 		assertEquals("Harry Potter and the Deathly Hallows - Part 2", movies.get(0).getTitle());
 	}
@@ -31,7 +31,7 @@ public class TestsRepository {
 	@Test
 	public void searchMovies_ReturnsOneMovie() {
 		httpClient.setResponse(JsonResult.jsonMovieSearch);
-		ArrayList<Movie> movies = repo.searchMovie("something");
+		ArrayList<MyMovie> movies = repo.searchMovie("something");
 		assertEquals(1, movies.size());		
 	}
 	

@@ -1,17 +1,18 @@
 package Interfaces;
 
+import it.jtomato.gson.Movie;
 import it.jtomato.gson.Review;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import business.Movie;
+import business.MyMovie;
 
 public interface WebMediatorInterface {
 	
-	public abstract ArrayList<business.Movie> getBoxOfficeMovies(int limit);
+	public abstract ArrayList<business.MyMovie> getBoxOfficeMovies(int limit);
 	
-	public abstract ArrayList<business.Movie> searchMovie(String searchString);
+	public abstract ArrayList<business.MyMovie> searchMovie(String searchString);
 	
 	public abstract Movie getAdditionalInfo(Movie movie);
 	

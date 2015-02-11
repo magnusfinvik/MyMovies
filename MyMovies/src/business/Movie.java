@@ -1,8 +1,16 @@
 package business;
 
+import it.jtomato.gson.Review;
+
 import java.util.List;
 
+import Interfaces.WebMediatorInterface;
+import mediators.WebMediator;
+
 public class Movie {
+	
+	private List<Review> listOfReviewes;
+	private WebMediatorInterface webMediator = new WebMediator();
 	
 	private it.jtomato.gson.Movie movie;
 	

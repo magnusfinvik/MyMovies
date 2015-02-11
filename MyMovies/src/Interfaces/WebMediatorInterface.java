@@ -17,4 +17,5 @@ public interface WebMediatorInterface {
 	public abstract Movie getAdditionalInfo(Movie movie);
 	
 	public abstract List<Review> getReviews(Movie movie);
+
 }

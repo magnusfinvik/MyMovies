@@ -13,14 +13,14 @@ import it.jtomato.JTomato;
 
 public class WebMediator implements WebMediatorInterface{
 	private JTomato client;
-	
+
 	public WebMediator(){
 		client = new JTomato("ut2px3dxzsbqa53dyzgghrb3");
 	}
 	public WebMediator(JTomato client){
 		this.client = client; 
 	}
-		
+
 	@Override
 	public ArrayList<business.MyMovie> getBoxOfficeMovies(int limit){
 		Collection<Movie> movies = client.getBoxOfficeMovies("no", limit);
@@ -28,10 +28,10 @@ public class WebMediator implements WebMediatorInterface{
 		for (Movie movie : movies) {
 			returnList.add(new business.MyMovie(movie));
 		}
-		
+
 		return returnList;
 	}	
-		
+
 	@Override
 	public ArrayList<business.MyMovie> searchMovie(String searchString) {
 		ArrayList<Movie> result = new ArrayList<Movie>();
@@ -40,7 +40,7 @@ public class WebMediator implements WebMediatorInterface{
 		for (Movie movie : result) {
 			returnList.add(new business.MyMovie(movie));
 		}		
-		
+
 		return returnList;
 	}
 
@@ -48,7 +48,7 @@ public class WebMediator implements WebMediatorInterface{
 	public Movie getAdditionalInfo(Movie movie) {
 		return client.getMovieAdditionalInfo(movie);
 	}
-	
+
 	@Override
 	public List<Review> getReviews(Movie movie){
 		List<Review> reviewResults = new ArrayList<>();

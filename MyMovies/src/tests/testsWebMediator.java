@@ -1,10 +1,12 @@
 package tests;
 
 import static org.junit.Assert.*;
+import it.jtomato.JTomato;
 import it.jtomato.gson.Movie;
 import it.jtomato.gson.Review;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import mediators.WebMediator;
@@ -34,9 +36,14 @@ public class testsWebMediator {
 	}
 	@Test
 	public void List_testGetReviews(){
+		//må forbedres
+		List<Review> temp = null;
+		JTomato client = new JTomato("ut2px3dxzsbqa53dyzgghrb3");	
 		WebMediator test = new WebMediator();
-		Movie movie = new Movie();
-		List<Review> temp = test.getReviews(movie);
-		assertEquals(3,temp.size());
+		Collection<Movie> movie = client.getBoxOfficeMovies("no", 1);
+		for (Movie m1 : movie){
+			temp = test.getReviews(m1);
+		}
+		assertEquals(20,temp.size());
 	}
 }

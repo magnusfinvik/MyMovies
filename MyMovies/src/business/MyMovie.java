@@ -9,10 +9,9 @@ import mediators.WebMediator;
 
 public class MyMovie {
 	
+	private Movie movie;
 	private List<Review> listOfReviewes;
 	private WebMediatorInterface webMediator = new WebMediator();
-	
-	private Movie movie;
 	
 	public MyMovie(Movie movie) {
 		this.movie = movie;		

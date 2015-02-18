@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import business.MyMovie;
 import Interfaces.WebMediatorInterface;
 import it.jtomato.*;
 import it.jtomato.gson.Movie;

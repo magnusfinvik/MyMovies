@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import mediators.FileMediator;
 import mediators.WebMediator;
 
 import org.junit.Test;
@@ -28,7 +29,8 @@ public class TestMainViewController {
 	
 	@Test
 	public void txtFile_AddMoiveToFavoriteTextFile() throws FileNotFoundException{
-		MainViewController controller = new MainViewController();
+		FileMediator fileMediator = new FileMediator();
+		MainViewController controller = new MainViewController(fileMediator);
 		MyMovie movie = new MyMovie(new Movie());
 		controller.addToFavorite(movie);
 		assertEquals();
@@ -37,9 +39,10 @@ public class TestMainViewController {
 	@Test
 	public void txtFile_testGetFavorites() throws FileNotFoundException{
 		FileReader readFavorite = new FileReader("favorite.txt");
+		FileMediator fileMediator = new FileMediator();
 		WebRepository repo = new WebRepository();
 		Scanner readFile = new Scanner(readFavorite);
-		MainViewController controll = new MainViewController();
+		MainViewController controll = new MainViewController(fileMediator);
 		WebMediator test = new WebMediator();
 		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(3);
 		for(MyMovie movie : movies){
@@ -51,10 +54,11 @@ public class TestMainViewController {
 	@Test
 	//fiks denne testen sin assert
 	public void txtFile_AddMoiveToFavoriteTextFile_addThreeMovies() throws FileNotFoundException{
+		FileMediator fileMediator = new FileMediator();
 		FileReader readFavorite = new FileReader("favorite.txt");
 		WebRepository repo = new WebRepository();
 		Scanner readFile = new Scanner(readFavorite);
-		MainViewController controll = new MainViewController();
+		MainViewController controll = new MainViewController(fileMediator);
 		WebMediator test = new WebMediator();
 		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(3);
 		for(MyMovie movie : movies){

@@ -13,7 +13,7 @@ import java.util.Scanner;
 import business.MyMovie;
 
 public class FileMediator implements FileMediatorInterface{
-	private String favoritesFilePath = "fileStore/favorites.txt";
+	private String favoritesFilePath = "favorites.txt";
 
 	public void storeMoviesAsFavorite(MyMovie movie){
 		File file = new File(favoritesFilePath);

@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import it.jtomato.gson.Movie;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -21,10 +22,17 @@ import business.MyMovie;
 public class TestMainViewController {
 	
 	public boolean storeCalled;
+	File favorites = new File("favorite.txt");
 	@Test
-	public void txtFile_testToSeIfAnTxtFileAllredyExist() throws FileNotFoundException {
-		FileReader readFavorite = new FileReader("favorite.txt");
-		assertNotNull(readFavorite);
+	public void txtFile_testToSeIfAnTxtFileAllredyExist() {
+		FileReader readFavorite;
+		try {
+			readFavorite = new FileReader(favorites);
+			assertNotNull(readFavorite);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Test
@@ -38,7 +46,7 @@ public class TestMainViewController {
 	
 	@Test
 	public void txtFile_testGetFavorites() throws FileNotFoundException{
-		FileReader readFavorite = new FileReader("favorite.txt");
+		FileReader readFavorite = new FileReader(favorites);
 		FileMediator fileMediator = new FileMediator();
 		WebRepository repo = new WebRepository();
 		Scanner readFile = new Scanner(readFavorite);
@@ -55,7 +63,7 @@ public class TestMainViewController {
 	//fiks denne testen sin assert
 	public void txtFile_AddMoiveToFavoriteTextFile_addThreeMovies() throws FileNotFoundException{
 		FileMediator fileMediator = new FileMediator();
-		FileReader readFavorite = new FileReader("favorite.txt");
+		FileReader readFavorite = new FileReader(favorites);
 		WebRepository repo = new WebRepository();
 		Scanner readFile = new Scanner(readFavorite);
 		MainViewController controll = new MainViewController(fileMediator);

@@ -39,39 +39,11 @@ public class TestMainViewController {
 	public void txtFile_AddMoiveToFavoriteTextFile() throws FileNotFoundException{
 		FileMediator fileMediator = new FileMediator();
 		MainViewController controller = new MainViewController(fileMediator);
-		MyMovie movie = new MyMovie(new Movie());
+		it.jtomato.gson.Movie m = new it.jtomato.gson.Movie();
+		m.id = "123";
+		MyMovie movie = new MyMovie(m);
 		controller.addToFavorite(movie);
-		assertEquals();
-	}
-	
-	@Test
-	public void txtFile_testGetFavorites() throws FileNotFoundException{
-		FileReader readFavorite = new FileReader(favorites);
-		FileMediator fileMediator = new FileMediator();
-		WebRepository repo = new WebRepository();
-		Scanner readFile = new Scanner(readFavorite);
-		MainViewController controll = new MainViewController(fileMediator);
-		WebMediator test = new WebMediator();
-		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(3);
-		for(MyMovie movie : movies){
-			controll.addToFavorite(movie);
-		}
-		assertEquals("771353298: Kingsman: The Secret Service", controll.getFavorites());
-	}
-	
-	@Test
-	//fiks denne testen sin assert
-	public void txtFile_AddMoiveToFavoriteTextFile_addThreeMovies() throws FileNotFoundException{
-		FileMediator fileMediator = new FileMediator();
-		FileReader readFavorite = new FileReader(favorites);
-		WebRepository repo = new WebRepository();
-		Scanner readFile = new Scanner(readFavorite);
-		MainViewController controll = new MainViewController(fileMediator);
-		WebMediator test = new WebMediator();
-		ArrayList<MyMovie> movies = repo.getBoxOfficeMovies(3);
-		for(MyMovie movie : movies){
-			controll.addToFavorite(movie);
-		}
-		assertEquals("771353298: Kingsman: The Secret Service","");
+		assertEquals(controller.getFavorites().get(0), movie.getId());
+		
 	}
 }
